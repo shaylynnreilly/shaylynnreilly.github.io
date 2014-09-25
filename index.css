@@ -6,7 +6,7 @@ body{
 h1 {
 	/* font */
 	font-family: Century Gothic;
-	font-size: 70px;
+	font-size: 65px;
 	font-weight: 100;
 	text-align: center;
 	/* dimensions */
@@ -40,7 +40,7 @@ div {
 p {
 	/* font */
 	font-family: Century Gothic;
-	font-size: 24px;
+	font-size: 20px;
 	text-align: center;
 	/* dimensions */
 	margin-left: auto;
