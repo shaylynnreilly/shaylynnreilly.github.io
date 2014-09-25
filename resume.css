@@ -1,1 +1,73 @@
 /* resume.css */
+
+body{
+	background-color: #FFFF66;
+	background-image: url('lights.jpg');
+}
+
+h1 {
+	/* font */
+	font-family: Century Gothic;
+	font-size: 55px;
+	font-weight: 100;
+	text-align: center;
+	/* dimensions */
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 7px;
+	/* colors */
+	background-color: white;
+	color: #FF6600;
+	border-style: double;
+	border-color: #FFFF66;
+	opacity: .9;
+}
+
+p {
+	/* font */
+	font-family: Century Gothic;
+	font-size: 18px;
+	text-align: center;
+	/* dimensions */
+	margin-left: auto;
+	margin-right: auto;
+	width: 450px;
+	padding: 10px;
+	/* colors */
+	background-color: white;
+	border-style: double;
+	border-color: #FFFF00;
+	opacity: .9;
+}
+
+div {
+	/* font */
+	font-family: Century Gothic;
+	font-size: 18px;
+	text-align: center;
+	/* dimensions */
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	width: 450px;
+	padding: 10px;
+	/* colors */
+	background-color: white;
+	border-style: double;
+	border-color: #FFFF00;
+	opacity: .9;
+}
+
+span {
+	color: #FF6600;
+}
+
+ul {
+	text-align: left;
+	font-size: 15px;
+}
+
+#name {
+	font-size: 25px;
+}

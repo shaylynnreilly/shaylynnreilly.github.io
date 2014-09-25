@@ -21,7 +21,7 @@ h1 {
 	color: #FF6600;
 	border-style: double;
 	border-color: #FFFF66;
-	opacity: .8;
+	opacity: .9;
 }
 
 p {
@@ -38,6 +38,5 @@ p {
 	background-color: white;
 	border-style: double;
 	border-color: #FFFF00;
-	opacity: .8;
-
+	opacity: .9;
 }

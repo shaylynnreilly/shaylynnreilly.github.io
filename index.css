@@ -1,4 +1,5 @@
 /* index.css */
+
 body{
 	background-color: #FFFF66;
 	background-image: url('lights.jpg');
@@ -19,7 +20,7 @@ h1 {
 	color: #FF6600;
 	border-style: double;
 	border-color: #FFFF66;
-	opacity: .8;
+	opacity: .9;
 }
 
 div {
@@ -34,7 +35,6 @@ div {
 	background-color: white;
 	border-style: double;
 	border-color: #FFFF66;
-
 }
 
 p {
@@ -51,8 +51,7 @@ p {
 	background-color: white;
 	border-style: double;
 	border-color: #FFFF00;
-	opacity: .8;
-
+	opacity: .9;
 }
 
 a {
