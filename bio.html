@@ -13,7 +13,7 @@
 			var request = new XMLHttpRequest();
 			var me = new google.maps.LatLng(myLat, myLng);
 			var myOptions = {
-						zoom: 13, // The larger the zoom number, the bigger the zoom
+						zoom: 15, // The larger the zoom number, the bigger the zoom
 						center: me,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
@@ -38,7 +38,7 @@
 					});
 				}
 				else {
-					alert("Geolocation is not supported by your web browser.  What a shame!");
+					alert("Geolocation is not supported by your web browser.");
 				}
 			}
 
@@ -48,11 +48,19 @@
 				
 				// Update map and go there...
 				map.panTo(me);
+
+				var myImage = {
+					url: "aliciaspinnet.png",
+					size: new google.maps.Size(30, 30),
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(0, 30)
+				};
 	
 				// Create a marker
 				marker = new google.maps.Marker({
 					position: me,
-					title: "Here I Am!"
+					title: "AliciaSpinnet",
+					icon: myImage
 				});
 				marker.setMap(map);
 					
