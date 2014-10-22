@@ -49,6 +49,7 @@
 				// Update map and go there...
 				map.panTo(me);
 				//post my data to datastore API
+				console.log("hi");
 				var request = new XMLHttpRequest(); 
 				request.onreadystatechange = dataReady;
 				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
