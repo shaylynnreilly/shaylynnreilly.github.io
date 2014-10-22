@@ -51,8 +51,8 @@
 				//post my data to datastore API
 				var request = new XMLHttpRequest();   // new HttpRequest instance 
 				//request.onreadystatechange = dataReady;
-				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation");
-				request.setRequestHeader("Content-Type", "application/json;charset=UTF-8", true);
+				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
+				request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 				//request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
 				request.send("AliciaSpinnet", myLat, myLng)
 				request.onreadystatechange = dataReady;
