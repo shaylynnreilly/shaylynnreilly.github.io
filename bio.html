@@ -53,7 +53,8 @@
 				//request.onreadystatechange = dataReady;
 				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation");
 				request.setRequestHeader("Content-Type", "application/json;charset=UTF-8", true);
-				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
+				//request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
+				request.send("AliciaSpinnet", myLat, myLng)
 				request.onreadystatechange = dataReady;
 
 				var myImage = {
