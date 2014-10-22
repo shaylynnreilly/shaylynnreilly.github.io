@@ -52,9 +52,9 @@
 				console.log("before XMLHttpRequest");
 				var request = new XMLHttpRequest(); 
 				request.onreadystatechange = dataReady;
-				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
+				/*request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
 				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
+				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));*/
 				
 				//sets my marker's image
 				var myImage = {
@@ -80,6 +80,9 @@
 			//gets data & calls functions to make markers
 			function dataReady() {
 				console.log("in dataReady");
+				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
+				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
 				console.log("readystate = " + request.readyState);
 				if (request.readyState == 4 && request.status == 200) {
 					console.log("in readyState = 4 and status = 200");
