@@ -49,21 +49,20 @@
 				// Update map and go there...
 				map.panTo(me);
 				//post my data to datastore API
-				console.log("hi");
+				console.log("before XMLHttpRequest");
 				var request = new XMLHttpRequest(); 
 				request.onreadystatechange = dataReady;
 				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
 				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
 				
-
+				//sets my marker's image
 				var myImage = {
 					url: "aliciaspinnet.jpg",
 					size: new google.maps.Size(40, 50),
 					origin: new google.maps.Point(0, 0),
 					anchor: new google.maps.Point(0, 120)
 				};
-	
 				// Create a marker
 				marker = new google.maps.Marker({
 					position: me,
@@ -71,7 +70,6 @@
 					icon: myImage
 				});
 				marker.setMap(map);
-					
 				// Open info window on click of marker
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.setContent(marker.title);
@@ -79,9 +77,11 @@
 				});
 			}
 
+			//gets data & calls functions to make markers
 			function dataReady() {
+				console.log("in dataReady");
 				if (request.readyState == 4 && request.status == 200) {
-					console.log("hi");
+					console.log("in readyState = 4 and status = 200");
 					people = JSON.parse(request.responseText);
 					console.log(people);
 					characters = people["characters"];
