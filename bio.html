@@ -83,6 +83,7 @@
 			function dataReady() {
 				if (request.readyState == 4 && request.status == 200) {
 					people = JSON.parse(request.responseText);
+					console.log(people);
 					characters = people["characters"];
 					students = people["students"];
 					for (var i = 0; i < characters.length; i++) {
