@@ -51,11 +51,12 @@
 				//post my data to datastore API
 				var request = new XMLHttpRequest();   // new HttpRequest instance 
 				//request.onreadystatechange = dataReady;
+				request.onreadystatechange = dataReady;
 				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
 				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
 				//request.send("login=AliciaSpinnet&lat=myLat&lng=myLng");
-				request.onreadystatechange = dataReady;
+				//request.onreadystatechange = dataReady;
 
 				var myImage = {
 					url: "aliciaspinnet.jpg",
