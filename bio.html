@@ -52,7 +52,7 @@
 				var request = new XMLHttpRequest();   // new HttpRequest instance 
 				//request.onreadystatechange = dataReady;
 				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
-				request.setRequestHeader("Content-Type", "chickenofthesea.herokuapp.com/sendLocation/x-www-form-urlencoded");
+				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
 				//request.send("login=AliciaSpinnet&lat=myLat&lng=myLng");
 				request.onreadystatechange = dataReady;
