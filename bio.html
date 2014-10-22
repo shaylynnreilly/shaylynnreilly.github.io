@@ -90,18 +90,29 @@
 					}
 					for (var j = 0; j < students.length; j++){
 						var student = students[i];
-						console.log(students["name"]);
+
 						plotStudent(student);
 					}
 				}
 			}
 			function plotCharacter(character) {
+				pos = new google.maps.LatLng(character["lat"], character["lng"]);
 
+				marker = new google.maps.Marker({
+					position: pos,
+					title: character["name"],
+				});
+				marker.setMap(map);
+
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
 			}
 			function plotStudent(student) {
 				pos = new google.maps.LatLng(student["lat"], student["lng"]);
 				// Create a marker
-				console.log(student["name"]);
+				
 				marker = new google.maps.Marker({
 					position: pos,
 					title: student["name"],
