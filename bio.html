@@ -80,6 +80,7 @@
 			//gets data & calls functions to make markers
 			function dataReady() {
 				console.log("in dataReady");
+				console.log("readystate = " + readyState);
 				if (request.readyState == 4 && request.status == 200) {
 					console.log("in readyState = 4 and status = 200");
 					people = JSON.parse(request.responseText);
