@@ -50,10 +50,11 @@
 				map.panTo(me);
 				//post my data to datastore API
 				var request = new XMLHttpRequest();   // new HttpRequest instance 
-				request.onreadystatechange = dataReady;
-				/*request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation");
+				//request.onreadystatechange = dataReady;
+				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation");
 				request.setRequestHeader("Content-Type", "application/json;charset=UTF-8", true);
-				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));*/
+				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
+				request.onreadystatechange = dataReady;
 
 				var myImage = {
 					url: "aliciaspinnet.jpg",
@@ -79,9 +80,6 @@
 
 			function dataReady() {
 				if (request.readyState == 4 && request.status == 200) {
-					request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation");
-					request.setRequestHeader("Content-Type", "application/json;charset=UTF-8", true);
-					request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
 					people = JSON.parse(request.responseText);
 					characters = people["characters"];
 					students = people["students"];
