@@ -83,17 +83,19 @@
 					characters = people["characters"];
 					students = people["students"];
 					for (var i = 0; i < characters.length; i++) {
-						plotCharacter(characters[i]);
+						var character = characters[i];
+						plotCharacter(character);
 					}
 					for (var j = 0; j < students.length; j++){
-						plotStudent(students[i]);
+						var student = students[i];
+						plotStudent(student);
 					}
 				}
 			}
-			function plotCharacter(var character) {
+			function plotCharacter(character) {
 
 			}
-			function plotStudent(var student) {
+			function plotStudent(student) {
 				pos = new google.maps.LatLng(student["lat"], student["lng"]);
 				// Create a marker
 				marker = new google.maps.Marker({
