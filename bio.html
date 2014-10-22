@@ -48,6 +48,12 @@
 				
 				// Update map and go there...
 				map.panTo(me);
+				//post my data to datastore API
+				var request = new XMLHttpRequest();   // new HttpRequest instance 
+				request.onreadystatechange = dataReady;
+				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation");
+				request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+				request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
 
 				var myImage = {
 					url: "aliciaspinnet.jpg",
@@ -64,6 +70,37 @@
 				});
 				marker.setMap(map);
 					
+				// Open info window on click of marker
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+			}
+
+			function dataReady() {
+				if (request.readyState == 4 && request.status == 200) {
+					people = JSON.parse(request.responseText);
+					characters = people["characters"];
+					students = people["students"];
+					for (var i = 0; i < characters.length; i++) {
+						plotCharacter(characters[i]);
+					}
+					for (var j = 0; j < students.length; j++){
+						plotStudent(students[i]);
+					}
+				}
+			}
+			function plotCharacter(var character) {
+
+			}
+			function plotStudent(var student) {
+				pos = new google.maps.LatLng(student["lat"], student["lng"]);
+				// Create a marker
+				marker = new google.maps.Marker({
+					position: pos,
+					title: student["name"],
+				});
+				marker.setMap(map);
 				// Open info window on click of marker
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.setContent(marker.title);
