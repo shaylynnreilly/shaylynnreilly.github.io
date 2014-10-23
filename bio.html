@@ -106,7 +106,56 @@
                 //gets character's location
                 pos = new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"]);
                 //sets image -- getting errors when trying if statements
-                var charImage = {
+                if (character["name"] == "waldo") {
+                	var charImage = {
+                		url: "waldo.png",
+                		size: new google.maps.Size(50, 60),
+                		origin: new google.maps.Point(0, 0),
+                		anchor: new google.maps.Point(0, 0)
+                	};
+                }
+                if (character["name"] == "carmen") {
+                	var charImage = {
+                		url: "carmen.png",
+                		size: new google.maps.Size(50, 60),
+                		origin: new google.maps.Point(0, 0),
+                		anchor: new google.maps.Point(0, 0)
+                	};
+                }
+                if (character["name"] == "batman") {
+                	var charImage = {
+                		url: "batman.png",
+                		size: new google.maps.Size(50, 60),
+                		origin: new google.maps.Point(0, 0),
+                		anchor: new google.maps.Point(0, 0)
+                	};
+                }
+                if (character["name"] == "nr") {
+                	var charImage = {
+                		url: "nr.png",
+                		size: new google.maps.Size(50, 60),
+                		origin: new google.maps.Point(0, 0),
+                		anchor: new google.maps.Point(0, 0)
+                	};
+                }
+                if (character["name"] == "snape") {
+                	var charImage = {
+                		url: "snape.png",
+                		size: new google.maps.Size(50, 60),
+                		origin: new google.maps.Point(0, 0),
+                		anchor: new google.maps.Point(0, 0)
+                	};
+                }
+                if (character["name"] == "hescott") {
+                	var charImage = {
+                		url: "hescott.png",
+                		size: new google.maps.Size(50, 60),
+                		origin: new google.maps.Point(0, 0),
+                		anchor: new google.maps.Point(0, 0)
+                	};
+                }
+
+                /*var charImage = {
                     //if (character["name"] == "waldo") {
                         url: "waldo.png",
                     /*} else if (character["name"] == "carmen") {
@@ -119,11 +168,11 @@
                         url: "nr.png",
                     } else if (character["name"] == "snape") {
                         url: "snape.png",
-                    }*/
+                    }
                     size: new google.maps.Size(50, 60),
                     origin: new google.maps.Point(0, 0),
                     anchor: new google.maps.Point(0, 0)
-                };
+                }; */
 
                 //creates character marker
                 var char_marker = new google.maps.Marker({
