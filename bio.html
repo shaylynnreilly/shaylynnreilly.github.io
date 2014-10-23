@@ -10,7 +10,7 @@
         <script type="text/javascript">
             var myLat = 0;
 			var myLng = 0;
-			var request = new XMLHttpRequest();
+			var request;
 			var me = new google.maps.LatLng(myLat, myLng);
 			var myOptions = {
 						zoom: 16, // The larger the zoom number, the bigger the zoom
@@ -50,7 +50,7 @@
 				map.panTo(me);
 				//post my data to datastore API
 				console.log("before XMLHttpRequest");
-				var request = new XMLHttpRequest(); 
+				request = new XMLHttpRequest(); 
 				request.onreadystatechange = dataReady;
 				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
 				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
