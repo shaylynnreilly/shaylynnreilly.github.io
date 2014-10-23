@@ -132,8 +132,21 @@
                 char_marker.setMap(map);
 
                 google.maps.event.addListener(char_marker, 'click', function() {
-                    infowindow.setContent("<p>" + "login: " + char_marker.title + "</p><p> latitude: " + character["loc"]["latitude"] + "</p><p>longitude: " + character["loc"]["longitude"] + "</p><p>note: " + character["loc"]["note"] + "</p>");
+                    infowindow.setContent("<p>" + "name: " + char_marker.title + "</p><p> latitude: " + character["loc"]["latitude"] + "</p><p>longitude: " + character["loc"]["longitude"] + "</p><p>note: " + character["loc"]["note"] + "</p>");
                     infowindow.open(map, char_marker);
+                });
+
+                var path = [
+					me,
+					pos
+				];
+
+                var charline = new google.maps.Polyline({
+                	path: path,
+                	geodesic: true,
+                	strokeColor: '#FF0000',
+                	strokeOpacity: 1.0,
+                	strokeWeight: 2
                 });
             }
             function plotStudent(student) {
