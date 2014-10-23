@@ -102,7 +102,7 @@
 			}
 			function plotCharacter(character) {
 				console.log(character);
-				pos = new google.maps.LatLng(character["lat"], character["lng"]);
+				pos = new google.maps.LatLng(character["loc"]["lat"], character["loc"]["lng"]);
 
 				marker = new google.maps.Marker({
 					position: pos,
@@ -116,7 +116,7 @@
 				});
 			}
 			function plotStudent(student) {
-				pos = new google.maps.LatLng(student["lat"], student["lng"]);
+				pos = new google.maps.LatLng(student["loc"]["lat"], student["loc"]["lng"]);
 				// Create a marker
 				
 				marker = new google.maps.Marker({
