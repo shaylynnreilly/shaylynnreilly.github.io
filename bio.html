@@ -102,7 +102,7 @@
             }
             function plotCharacter(character) {
           
-                pos = new google.maps.LatLng(character.loc["lat"], character.loc["lng"]);
+                pos = new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"]);
 
                 console.log(pos);
                 var charImage = {
