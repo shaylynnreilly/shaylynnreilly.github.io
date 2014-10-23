@@ -106,19 +106,19 @@
 
                 console.log(pos);
                 var charImage = {
-                	if (character["name"] == "waldo") {
-                    	url: "waldo.png"
-                    } else if (character["name"] == "carmen") {
-                    	url: "carmen.png"
+                	//if (character["name"] == "waldo") {
+                    	url: "waldo.png",
+                    /*} else if (character["name"] == "carmen") {
+                    	url: "carmen.png",
                     } else if (character["name"] == "batman") {
-                    	url: "batman.png"
+                    	url: "batman.png",
                     } else if (character["name"] == "hescott") {
-                    	url: "hescott.png"
+                    	url: "hescott.png",
                     } else if (character["name"] == "nr") {
-                    	url: "nr.png"
+                    	url: "nr.png",
                     } else if (character["name"] == "snape") {
-                    	url: "snape.png"
-                    } ,
+                    	url: "snape.png",
+                    }*/
                     size: new google.maps.Size(50, 60),
                     origin: new google.maps.Point(0, 0),
                     anchor: new google.maps.Point(0, 0)
@@ -132,7 +132,7 @@
                 char_marker.setMap(map);
 
                 google.maps.event.addListener(char_marker, 'click', function() {
-                    infowindow.setContent(char_marker.title);
+                    infowindow.setContent("<p>" + "login: " + char_marker.title + "</p><p> latitude: " + character["loc"]["latitude"] + "</p><p>longitude: " + character["loc"]["longitude"] + "</p><p>note: " + character["loc"]["note"] + "</p>");
                     infowindow.open(map, char_marker);
                 });
             }
