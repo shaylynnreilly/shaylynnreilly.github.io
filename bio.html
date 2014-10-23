@@ -49,14 +49,14 @@
 				// Update map and go there...
 				map.panTo(me);
 				//post my data to datastore API
-				console.log("before XMLHttpRequest");
+				
 				request = new XMLHttpRequest(); 
 				request.onreadystatechange = dataReady;
 				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
 				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 				
 				//request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
-				request.send("login=AliciaSpinnet&lat=35&lng=-71");
+				request.send("login=AliciaSpinnet&lat=" + myLat + "&lng=" +myLng);
 
 				
 				//sets my marker's image
@@ -82,12 +82,11 @@
 
 			//gets data & calls functions to make markers
 			function dataReady() {
-				console.log("in dataReady");
-				console.log("readystate = " + request.readyState);
+				
 				if (request.readyState == 4 && request.status == 200) {
-					console.log("in readyState = 4 and status = 200");
+				
 					people = JSON.parse(request.responseText);
-					console.log(people);
+				
 					characters = people["characters"];
 					students = people["students"];
 					for (var i = 0; i < characters.length; i++) {
