@@ -137,8 +137,8 @@
                 });
 
                 var path = [
-					me,
-					pos
+					new google.maps.LatLng(myLat, myLng),
+					new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"])
 				];
 
                 var charline = new google.maps.Polyline({
