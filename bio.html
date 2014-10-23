@@ -103,16 +103,23 @@
 			function plotCharacter(character) {
 				console.log(character);
 				pos = new google.maps.LatLng(character["loc"]["lat"], character["loc"]["lng"]);
+				var charImage = {
+					url: "waldo.png",
+					size: new google.maps.Size(50, 60),
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(0, 0)
+				};
 
-				marker = new google.maps.Marker({
+				var char_marker = new google.maps.Marker({
 					position: pos,
 					title: character["name"],
+					icon: charImage
 				});
-				marker.setMap(map);
+				char_marker.setMap(map);
 
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(char_marker, 'click', function() {
+					infowindow.setContent(char_marker.title);
+					infowindow.open(map, char_marker);
 				});
 			}
 			function plotStudent(student) {
