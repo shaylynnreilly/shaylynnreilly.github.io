@@ -11,6 +11,7 @@
             var myLat = 0;
             var myLng = 0;
             var request;
+            //my position
             var me = new google.maps.LatLng(myLat, myLng);
             var myOptions = {
                         zoom: 16, // The larger the zoom number, the bigger the zoom
@@ -22,12 +23,14 @@
             var infowindow = new google.maps.InfoWindow();
             var places;
             
+            //initializes map
             function init()
             {
                 map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
                 getMyLocation();
             }
             
+            //retrieves my location using geolocation
             function getMyLocation()
             {
                 if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
@@ -42,6 +45,7 @@
                 }
             }
 
+            //renders map with me as center and sends my data to datastore
             function renderMap()
             {
                 me = new google.maps.LatLng(myLat, myLng);
@@ -49,16 +53,12 @@
                 // Update map and go there...
                 map.panTo(me);
                 //post my data to datastore API
-                
                 request = new XMLHttpRequest(); 
                 request.onreadystatechange = dataReady;
                 request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
                 request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                
-                //request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
                 request.send("login=AliciaSpinnet&lat=" + myLat + "&lng=" +myLng);
 
-                
                 //sets my marker's image
                 var myImage = {
                     url: "aliciaspinnet.jpg",
@@ -84,15 +84,16 @@
             function dataReady() {
                 
                 if (request.readyState == 4 && request.status == 200) {
-                
                     people = JSON.parse(request.responseText);
-                
+                    //2 different arrays for characters & students
                     characters = people["characters"];
                     students = people["students"];
+                    //plots characters
                     for (var i = 0; i < characters.length; i++) {
                         var character = characters[i];
                         plotCharacter(character);
                     }
+                    //plots students
                     for (var j = 0; j < students.length; j++){
                         var student = students[j];
 
@@ -100,30 +101,31 @@
                     }
                 }
             }
-            function plotCharacter(character) {
-          
-                pos = new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"]);
 
-                console.log(pos);
+            function plotCharacter(character) {
+                //gets character's location
+                pos = new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"]);
+                //sets image -- getting errors when trying if statements
                 var charImage = {
-                	//if (character["name"] == "waldo") {
-                    	url: "waldo.png",
+                    //if (character["name"] == "waldo") {
+                        url: "waldo.png",
                     /*} else if (character["name"] == "carmen") {
-                    	url: "carmen.png",
+                        url: "carmen.png",
                     } else if (character["name"] == "batman") {
-                    	url: "batman.png",
+                        url: "batman.png",
                     } else if (character["name"] == "hescott") {
-                    	url: "hescott.png",
+                        url: "hescott.png",
                     } else if (character["name"] == "nr") {
-                    	url: "nr.png",
+                        url: "nr.png",
                     } else if (character["name"] == "snape") {
-                    	url: "snape.png",
+                        url: "snape.png",
                     }*/
                     size: new google.maps.Size(50, 60),
                     origin: new google.maps.Point(0, 0),
                     anchor: new google.maps.Point(0, 0)
                 };
 
+                //creates character marker
                 var char_marker = new google.maps.Marker({
                     position: pos,
                     title: character["name"],
@@ -131,29 +133,31 @@
                 });
                 char_marker.setMap(map);
 
+                //opens info window when marker is clicked on
                 google.maps.event.addListener(char_marker, 'click', function() {
                     infowindow.setContent("<p>" + "name: " + char_marker.title + "</p><p> latitude: " + character["loc"]["latitude"] + "</p><p>longitude: " + character["loc"]["longitude"] + "</p><p>note: " + character["loc"]["note"] + "</p>");
                     infowindow.open(map, char_marker);
                 });
 
+                //sets polyline path from me to character
                 var path = [
-					new google.maps.LatLng(myLat, myLng),
-					new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"])
-				];
-
+                    new google.maps.LatLng(myLat, myLng),
+                    new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"])
+                ];
+                //creates polyline
                 var charline = new google.maps.Polyline({
-                	path: path,
-                	geodesic: true,
-                	strokeColor: '#FF0000',
-                	strokeOpacity: 1.0,
-                	strokeWeight: 2
+                    path: path,
+                    geodesic: true,
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
                 });
-
                 charline.setMap(map);
             }
 
 
             function plotStudent(student) {
+                //gets student's position
                 pos = new google.maps.LatLng(student["lat"], student["lng"]);
                 // Create a marker
                 var student_marker = new google.maps.Marker({
