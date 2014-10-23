@@ -13,7 +13,7 @@
 			var request;
 			var me = new google.maps.LatLng(myLat, myLng);
 			var myOptions = {
-						zoom: 10, // The larger the zoom number, the bigger the zoom
+						zoom: 16, // The larger the zoom number, the bigger the zoom
 						center: me,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
@@ -119,15 +119,15 @@
 				pos = new google.maps.LatLng(student["lat"], student["lng"]);
 				// Create a marker
 				
-				marker = new google.maps.Marker({
+				var student_marker = new google.maps.Marker({
 					position: pos,
 					title: student["login"],
 				});
-				marker.setMap(map);
+				student_marker.setMap(map);
 				// Open info window on click of marker
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(student_marker, 'click', function() {
+					infowindow.setContent(student_marker.title);
+					infowindow.open(map, student_marker);
 				});
 			}
         </script>
