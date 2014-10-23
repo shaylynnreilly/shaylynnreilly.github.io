@@ -1,142 +1,142 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<title>Marauder's Map</title>
-    	<meta name = "viewport" content = "initial scale = 1.0, user-scalable = no" />
+        <title>Marauder's Map</title>
+        <meta name = "viewport" content = "initial scale = 1.0, user-scalable = no" />
         <link rel="stylesheet" type="text/css" href="bio.css">
         <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_qfmjBfmskPfrhZdBkLEoikxlUmXtQQU">
         </script>
         <script type="text/javascript">
             var myLat = 0;
-			var myLng = 0;
-			var request;
-			var me = new google.maps.LatLng(myLat, myLng);
-			var myOptions = {
-						zoom: 16, // The larger the zoom number, the bigger the zoom
-						center: me,
-						mapTypeId: google.maps.MapTypeId.ROADMAP
-					};
-			var map;
-			var marker;
-			var infowindow = new google.maps.InfoWindow();
-			var places;
-			
-			function init()
-			{
-				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-				getMyLocation();
-			}
-			
-			function getMyLocation()
-			{
-				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
-					navigator.geolocation.getCurrentPosition(function(position) {
-						myLat = position.coords.latitude;
-						myLng = position.coords.longitude;
-						renderMap();
-					});
-				}
-				else {
-					alert("Geolocation is not supported by your web browser.");
-				}
-			}
+            var myLng = 0;
+            var request;
+            var me = new google.maps.LatLng(myLat, myLng);
+            var myOptions = {
+                        zoom: 16, // The larger the zoom number, the bigger the zoom
+                        center: me,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+            var map;
+            var marker;
+            var infowindow = new google.maps.InfoWindow();
+            var places;
+            
+            function init()
+            {
+                map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                getMyLocation();
+            }
+            
+            function getMyLocation()
+            {
+                if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        myLat = position.coords.latitude;
+                        myLng = position.coords.longitude;
+                        renderMap();
+                    });
+                }
+                else {
+                    alert("Geolocation is not supported by your web browser.");
+                }
+            }
 
-			function renderMap()
-			{
-				me = new google.maps.LatLng(myLat, myLng);
-				
-				// Update map and go there...
-				map.panTo(me);
-				//post my data to datastore API
-				
-				request = new XMLHttpRequest(); 
-				request.onreadystatechange = dataReady;
-				request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
-				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-				
-				//request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
-				request.send("login=AliciaSpinnet&lat=" + myLat + "&lng=" +myLng);
+            function renderMap()
+            {
+                me = new google.maps.LatLng(myLat, myLng);
+                
+                // Update map and go there...
+                map.panTo(me);
+                //post my data to datastore API
+                
+                request = new XMLHttpRequest(); 
+                request.onreadystatechange = dataReady;
+                request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
+                request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                
+                //request.send(JSON.stringify({login:"AliciaSpinnet", lat: myLat, lng: myLng}));
+                request.send("login=AliciaSpinnet&lat=" + myLat + "&lng=" +myLng);
 
-				
-				//sets my marker's image
-				var myImage = {
-					url: "aliciaspinnet.jpg",
-					size: new google.maps.Size(40, 50),
-					origin: new google.maps.Point(0, 0),
-					anchor: new google.maps.Point(0, 0)
-				};
-				// Create a marker
-				marker = new google.maps.Marker({
-					position: me,
-					title: "AliciaSpinnet",
-					icon: myImage
-				});
-				marker.setMap(map);
-				// Open info window on click of marker
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
-				});
-			}
+                
+                //sets my marker's image
+                var myImage = {
+                    url: "aliciaspinnet.jpg",
+                    size: new google.maps.Size(40, 50),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(0, 0)
+                };
+                // Create a marker
+                marker = new google.maps.Marker({
+                    position: me,
+                    title: "AliciaSpinnet",
+                    icon: myImage
+                });
+                marker.setMap(map);
+                // Open info window on click of marker
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(marker.title);
+                    infowindow.open(map, marker);
+                });
+            }
 
-			//gets data & calls functions to make markers
-			function dataReady() {
-				
-				if (request.readyState == 4 && request.status == 200) {
-				
-					people = JSON.parse(request.responseText);
-				
-					characters = people["characters"];
-					students = people["students"];
-					for (var i = 0; i < characters.length; i++) {
-						var character = characters[i];
-						plotCharacter(character);
-					}
-					for (var j = 0; j < students.length; j++){
-						var student = students[j];
+            //gets data & calls functions to make markers
+            function dataReady() {
+                
+                if (request.readyState == 4 && request.status == 200) {
+                
+                    people = JSON.parse(request.responseText);
+                
+                    characters = people["characters"];
+                    students = people["students"];
+                    for (var i = 0; i < characters.length; i++) {
+                        var character = characters[i];
+                        plotCharacter(character);
+                    }
+                    for (var j = 0; j < students.length; j++){
+                        var student = students[j];
 
-						plotStudent(student);
-					}
-				}
-			}
-			function plotCharacter(character) {
-				console.log(character);
-				pos = new google.maps.LatLng(character["loc"]["lat"], character["loc"]["lng"]);
-				var charImage = {
-					url: "waldo.png",
-					size: new google.maps.Size(50, 60),
-					origin: new google.maps.Point(0, 0),
-					anchor: new google.maps.Point(0, 0)
-				};
+                        plotStudent(student);
+                    }
+                }
+            }
+            function plotCharacter(character) {
+          
+                pos = new google.maps.LatLng(character["loc"]["lat"], character["loc"]["lng"]);
+                var charImage = {
+                    url: "waldo.png",
+                    size: new google.maps.Size(50, 60),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(0, 0)
+                };
 
-				var char_marker = new google.maps.Marker({
-					position: pos,
-					title: character["name"],
-					icon: charImage
-				});
-				char_marker.setMap(map);
+                var char_marker = new google.maps.Marker({
+                    position: pos,
+                    title: character["name"],
+                    icon: charImage
+                });
+                char_marker.setMap(map);
 
-				google.maps.event.addListener(char_marker, 'click', function() {
-					infowindow.setContent(char_marker.title);
-					infowindow.open(map, char_marker);
-				});
-			}
-			function plotStudent(student) {
-				pos = new google.maps.LatLng(student["lat"], student["lng"]);
-				// Create a marker
-				
-				var student_marker = new google.maps.Marker({
-					position: pos,
-					title: student["login"],
-				});
-				student_marker.setMap(map);
-				// Open info window on click of marker
-				google.maps.event.addListener(student_marker, 'click', function() {
-					infowindow.setContent(student_marker.title);
-					infowindow.open(map, student_marker);
-				});
-			}
+                google.maps.event.addListener(char_marker, 'click', function() {
+                    infowindow.setContent(char_marker.title);
+                    infowindow.open(map, char_marker);
+                });
+            }
+            function plotStudent(student) {
+                pos = new google.maps.LatLng(student["lat"], student["lng"]);
+                // Create a marker
+                
+                var student_marker = new google.maps.Marker({
+                    position: pos,
+                    title: student["login"],
+                });
+                student_marker.setMap(map);
+                // Open info window on click of marker
+                google.maps.event.addListener(student_marker, 'click', function() {
+                    infowindow.setContent("login: " + student_marker.title + "\nlatitude: " + student["lat"] + "\nlongitude: " + student["lng"] + "\ntimestamp: " + student["created_at"]);
+                    infowindow.open(map, student_marker);
+                });
+            }
         </script>
     </head>
     <body onload ="init()">
