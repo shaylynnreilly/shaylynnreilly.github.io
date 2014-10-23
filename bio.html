@@ -63,7 +63,7 @@
                 var myImage = {
                     url: "aliciaspinnet.jpg",
                     size: new google.maps.Size(40, 50),
-                    origin: new google.maps.Point(0, 0),
+                    origin: new google.maps.Point(20, 25),
                     anchor: new google.maps.Point(0, 0)
                 };
                 // Create a marker
@@ -105,12 +105,12 @@
             function plotCharacter(character) {
                 //gets character's location
                 pos = new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"]);
-                //sets image -- getting errors when trying if statements
+                //sets image for individual characters
                 if (character["name"] == "waldo") {
                 	var charImage = {
                 		url: "waldo.png",
                 		size: new google.maps.Size(50, 60),
-                		origin: new google.maps.Point(0, 0),
+                		origin: new google.maps.Point(25, 30),
                 		anchor: new google.maps.Point(0, 0)
                 	};
                 }
@@ -154,25 +154,6 @@
                 		anchor: new google.maps.Point(0, 0)
                 	};
                 }
-
-                /*var charImage = {
-                    //if (character["name"] == "waldo") {
-                        url: "waldo.png",
-                    /*} else if (character["name"] == "carmen") {
-                        url: "carmen.png",
-                    } else if (character["name"] == "batman") {
-                        url: "batman.png",
-                    } else if (character["name"] == "hescott") {
-                        url: "hescott.png",
-                    } else if (character["name"] == "nr") {
-                        url: "nr.png",
-                    } else if (character["name"] == "snape") {
-                        url: "snape.png",
-                    }
-                    size: new google.maps.Size(50, 60),
-                    origin: new google.maps.Point(0, 0),
-                    anchor: new google.maps.Point(0, 0)
-                }; */
 
                 //creates character marker
                 var char_marker = new google.maps.Marker({
