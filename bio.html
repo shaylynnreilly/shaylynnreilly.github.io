@@ -133,7 +133,7 @@
                 student_marker.setMap(map);
                 // Open info window on click of marker
                 google.maps.event.addListener(student_marker, 'click', function() {
-                    infowindow.setContent("login: " + student_marker.title + "\nlatitude: " + student["lat"] + "\nlongitude: " + student["lng"] + "\ntimestamp: " + student["created_at"]);
+                    infowindow.setContent("login: " + student_marker.title + "\n" + "latitude: " + student["lat"] + "longitude: " + student["lng"] + "timestamp: " + student["created_at"]);
                     infowindow.open(map, student_marker);
                 });
             }
