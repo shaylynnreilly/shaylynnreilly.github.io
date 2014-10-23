@@ -103,6 +103,8 @@
             function plotCharacter(character) {
           
                 pos = new google.maps.LatLng(character["loc"]["lat"], character["loc"]["lng"]);
+
+                console.log(pos);
                 var charImage = {
                     url: "waldo.png",
                     size: new google.maps.Size(50, 60),
@@ -125,7 +127,6 @@
             function plotStudent(student) {
                 pos = new google.maps.LatLng(student["lat"], student["lng"]);
                 // Create a marker
-                
                 var student_marker = new google.maps.Marker({
                     position: pos,
                     title: student["login"],
