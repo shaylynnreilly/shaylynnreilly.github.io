@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Marauder's Map</title>
-        <meta name = "viewport" content = "initial scale = 1.0, user-scalable = no" />
+        <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no" charset = "utf-8" />
         <link rel="stylesheet" type="text/css" href="bio.css">
         <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_qfmjBfmskPfrhZdBkLEoikxlUmXtQQU">
@@ -55,13 +55,13 @@
                 //post my data to datastore API
                 request = new XMLHttpRequest(); 
                 request.onreadystatechange = dataReady;
-                request.open("POST", "http://chickenofthesea.herokuapp.com/sendLocation", true);
+                request.open("POST", "http://enigmatic-retreat-7223.herokuapp.com/sendlocation", true);
                 request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 request.send("login=AliciaSpinnet&lat=" + myLat + "&lng=" +myLng);
 
                 //sets my marker's image
                 var myImage = {
-                    url: "aliciaspinnet.jpg",
+                    url: "aliciaspinnet.png",
                     size: new google.maps.Size(40, 50),
                     origin: new google.maps.Point(0, 0),
                     anchor: new google.maps.Point(0, 0)
@@ -107,52 +107,52 @@
                 pos = new google.maps.LatLng(character["loc"]["latitude"], character["loc"]["longitude"]);
                 //sets image for individual characters
                 if (character["name"] == "waldo") {
-                	var charImage = {
-                		url: "waldo.png",
-                		size: new google.maps.Size(50, 60),
-                		origin: new google.maps.Point(0, 0),
-                		anchor: new google.maps.Point(0, 0)
-                	};
+                    var charImage = {
+                        url: "waldo.png",
+                        size: new google.maps.Size(50, 60),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(0, 0)
+                    };
                 }
                 if (character["name"] == "carmen") {
-                	var charImage = {
-                		url: "carmen.png",
-                		size: new google.maps.Size(50, 60),
-                		origin: new google.maps.Point(0, 0),
-                		anchor: new google.maps.Point(0, 0)
-                	};
+                    var charImage = {
+                        url: "carmen.png",
+                        size: new google.maps.Size(50, 60),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(0, 0)
+                    };
                 }
                 if (character["name"] == "batman") {
-                	var charImage = {
-                		url: "batman.png",
-                		size: new google.maps.Size(50, 60),
-                		origin: new google.maps.Point(0, 0),
-                		anchor: new google.maps.Point(0, 0)
-                	};
+                    var charImage = {
+                        url: "batman.png",
+                        size: new google.maps.Size(50, 60),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(0, 0)
+                    };
                 }
                 if (character["name"] == "nr") {
-                	var charImage = {
-                		url: "nr.png",
-                		size: new google.maps.Size(50, 60),
-                		origin: new google.maps.Point(0, 0),
-                		anchor: new google.maps.Point(0, 0)
-                	};
+                    var charImage = {
+                        url: "nr.png",
+                        size: new google.maps.Size(50, 60),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(0, 0)
+                    };
                 }
                 if (character["name"] == "snape") {
-                	var charImage = {
-                		url: "snape.png",
-                		size: new google.maps.Size(50, 60),
-                		origin: new google.maps.Point(0, 0),
-                		anchor: new google.maps.Point(0, 0)
-                	};
+                    var charImage = {
+                        url: "snape.png",
+                        size: new google.maps.Size(50, 60),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(0, 0)
+                    };
                 }
                 if (character["name"] == "hescott") {
-                	var charImage = {
-                		url: "hescott.png",
-                		size: new google.maps.Size(50, 60),
-                		origin: new google.maps.Point(0, 0),
-                		anchor: new google.maps.Point(0, 0)
-                	};
+                    var charImage = {
+                        url: "hescott.png",
+                        size: new google.maps.Size(50, 60),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(0, 0)
+                    };
                 }
 
                 //creates character marker
