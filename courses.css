@@ -84,8 +84,8 @@ body {
 	background: #fff;
 	cursor: pointer; 
 	transition: background .5s;  
-	padding-top:32px;
-	padding-bottom:31px;
+	padding-top:30px;
+	padding-bottom:30px;
 	opacity: 80%;
 	color:black;
 }
@@ -140,8 +140,8 @@ img {
 #here {
 	background: #fff;
 	color: black;
-	padding-top:32px;
-	padding-bottom:32px;
+	padding-top:30px;
+	padding-bottom:30px;
 	margin-right: -5px;
 	margin-left: -5px;
 }
