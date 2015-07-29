@@ -82,8 +82,8 @@ body {
 	background: #fff;
 	cursor: pointer; 
 	transition: background .5s;  
-	padding-top:32px;
-	padding-bottom:31px;
+	padding-top:30px;
+	padding-bottom:30px;
 	opacity: 80%;
 	color:black;
 }
@@ -133,8 +133,8 @@ body {
 #here {
 	background: #fff;
 	color: black;
-	padding-top:32px;
-	padding-bottom:32px;
+	padding-top:30px;
+	padding-bottom:30px;
 	margin-left: -5px;
 	margin-right: -5px;
 }
