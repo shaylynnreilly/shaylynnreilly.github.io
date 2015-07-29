@@ -82,8 +82,8 @@ body {
 	background: #fff;
 	cursor: pointer; 
 	transition: background .5s;  
-	padding-top:32px;
-	padding-bottom:31px;
+	padding-top:31px;
+	padding-bottom:32px;
 	opacity: 80%;
 	color:black;
 }
@@ -113,26 +113,13 @@ body {
 /* Main */
 .main .container {
 	margin-top: 80px;
-	text-align: left;
-	font-size: 24px;
-}
-
-.main p {
 	text-align: center;
-	text-decoration: underline;
-}
-
-.main ul {
-	-webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-	font-size:15
+	font-size: 24px;
 }
 
 img {
   height:120px;
-  width: auto;
-	border-radius:80%;
+  width: auto; 
 }
 
 #here {
@@ -140,4 +127,5 @@ img {
 	color: black;
 	padding-top:31px;
 	padding-bottom:32px;
+	margin-right: -5px;
 }
