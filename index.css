@@ -71,9 +71,12 @@ body {
   
 
 .btn:hover {
-	background: #117bff;
+	background: #fff;
 	cursor: pointer; 
 	transition: background .5s;  
+	padding-top:32px;
+	padding-bottom:31px;
+	color:black;
 }
 
 
@@ -100,13 +103,14 @@ body {
 
 /* Main */
 .main .container {
-	margin: 80px auto;
+  margin: 80px auto;
 }
 
 img {
   float: left;
   padding-bottom: 30px;
   padding-right: 30px;
-  height:140px;
+  height:250px;
   width: auto;
+  border-radius:80%;
 }
