@@ -39,7 +39,8 @@ body {
 	margin-top: 0;
 	margin-bottom: 80px;
   	color: white;
-font-family: 'Poiret One', cursive;}
+	font-family: 'Muli', sans-serif;
+}
 
 @media (min-width:850px) {
 	.header h1 {
