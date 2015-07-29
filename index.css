@@ -1,80 +1,111 @@
-/* index.css */
-
-body{
-	background-color: #FFFF66;
-	background-image: url('lights.jpg');
+html, body {
+	margin: 0;
+	padding: 0;
 }
-h1 {
-	/* font */
+
+body {
 	font-family: Century Gothic;
-	font-size: 65px;
 	font-weight: 100;
-	text-align: center;
-	/* dimensions */
-	width: 550px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 7px;
-	/* colors */
-	background-color: white;
-	color: #FF6600;
-	border-style: double;
-	border-color: #FFFF66;
-	opacity: .9;
 }
 
-div {
-	/* dimensions */
-	position: center;
-	margin-left: auto;
-	margin-right: auto;
-	width: 300px;
-	height: 383px;
-	padding: 6px;
-	/* colors */
-	background-color: white;
-	border-style: double;
-	border-color: #FFFF66;
-}
-
-p {
-	/* font */
-	font-family: Century Gothic;
-	font-size: 20px;
-	text-align: center;
-	/* dimensions */
-	margin-left: auto;
-	margin-right: auto;
-	width: 450px;
-	padding: 10px;
-	/* colors */
-	background-color: white;
-	border-style: double;
-	border-color: #FFFF00;
-	opacity: .9;
+.container {
+	margin: 0 auto;
+	max-width: 940px; 
+	padding: 0 10px; 
 }
 
 
-a {
-	text-decoration: none;
-	color: #FF6600;
+/* Header */
+.header {
+  height: 800px;
+  text-align: center; 
+  background: url("lights.jpg") no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-a:hover {
-	font-weight: 600;
-	color: #99cc00;
+.header .container {
+	position: relative;
+	top: 200px;
 }
 
-#bio {
-
-	padding-right: 50px;
-
+.header h1 {
+	font-size: 80px;
+	line-height: 100px; 
+	margin-top: 0;
+	margin-bottom: 80px;
+  color: white;
 }
 
-#resume {
+@media (min-width:850px) {
+	.header h1 {
+		font-size: 120px;
+	}
+}
 
-	padding-left: 50px;
+.header p {
+	font-weight: 500;
+	letter-spacing: 8px;
+	margin-bottom: 40px;
+	margin-top: 0;
+  color: white;
+}
+
+.btn {
+  background-color:black;
+  color: white;
+  text-decoration:none;
+  padding: 10px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn a {
+  color: white;
+  text-decoration:none;
+}
+  
+
+.btn:hover {
+	background: #117bff;
+	cursor: pointer; 
+	transition: background .5s;  
 }
 
 
+/* Nav */
+.nav {
+  background-color: black;
+  width: auto;
+}
 
+.nav ul {
+	list-style: none;
+	margin: 0 auto; 
+	padding: 30px 0;
+	text-align: center; 
+  
+}
+
+.nav li {
+  display: inline;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+
+/* Main */
+.main .container {
+	margin: 80px auto;
+}
+
+.main img {
+  float: left;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  height:140px;
+  width: auto;
+}
