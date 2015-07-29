@@ -19,13 +19,12 @@ body {
 .header {
   	height: 300px;
   	text-align: center; 
-	background: url("lights.jpg") no-repeat center;
+	background: url("http://www.wall321.com/thumbnails/detail/20120403/light%20abstract%201920x1200%20wallpaper_www.wallpaperto.com_12.jpg") no-repeat center;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
 	text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
-	margin-right: -35px;
 	font-family: 'Muli', sans-serif;
 }
 
@@ -64,18 +63,18 @@ body {
 }
 
 .btn {
-  background-color:black;
-  color: white;
-  text-decoration:none;
-  padding: 10px;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  	background-color:black;
+  	color: white;
+  	text-decoration:none;
+  	padding: 10px;
+  	width: 200px;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 
 .btn a {
-  color: white;
-  text-decoration:none;
+  	color: white;
+  	text-decoration:none;
 }
   
 
@@ -92,8 +91,8 @@ body {
 
 /* Nav */
 .nav {
-  background-color: black;
-  width: auto;
+  	background-color: black;
+  	width: auto;
 }
 
 .nav ul {
@@ -105,9 +104,9 @@ body {
 }
 
 .nav li {
-  display: inline;
-  padding-top:30px;
-  padding-bottom:30px;
+  	display: inline;
+  	padding-top:30px;
+  	padding-bottom:30px;
 }
 
 
