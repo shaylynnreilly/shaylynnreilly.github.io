@@ -24,6 +24,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+	text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
 }
 
 .header .container {
@@ -102,7 +103,7 @@ body {
 	margin: 80px auto;
 }
 
-.main img {
+img {
   float: left;
   padding-bottom: 30px;
   padding-right: 30px;
