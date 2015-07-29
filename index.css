@@ -38,7 +38,8 @@ body {
 	line-height: 100px; 
 	margin-top: 0;
 	margin-bottom: 80px;
-  color: white;
+  	color: white;
+  	font-family: 'Sigmar One', cursive;
 }
 
 @media (min-width:850px) {
