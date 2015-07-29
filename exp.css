@@ -114,17 +114,21 @@ body {
 .main .container {
 	margin-top: 80px;
 	text-align: left;
-	font-size: 24px;
+	font-size: 16px;
 }
 
 .main p {
 	text-align: center;
 	text-decoration: underline;
+	font-size: 24px;
+	margin-top:-20px;
+	margin-bottom: 40px;
 }
 
-.jobs {
-	display: inline
+.job {
+	padding-bottom: 10px;
 }
+
 
 #here {
 	background: #fff;
