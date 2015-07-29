@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	font-weight: 100;
 }
 
@@ -19,6 +19,7 @@ body {
 .header {
   height: 600px;
   text-align: center; 
+	margin-right:-20px;
   background: url("lights.jpg") no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -52,7 +53,9 @@ body {
 	margin-bottom: 40px;
 	margin-top: 0;
   color: white;
+	font-size: 20px;
 }
+
 
 .btn {
   background-color:black;
@@ -74,8 +77,8 @@ body {
 	background: #fff;
 	cursor: pointer; 
 	transition: background .5s;  
-	padding-top:32px;
-	padding-bottom:31px;
+	padding-top:30px;
+	padding-bottom:30px;
 	opacity: 80%;
 	color:black;
 }
@@ -113,5 +116,5 @@ img {
   padding-right: 30px;
   height:250px;
   width: auto;
-	border-radius:80%;
+  border-radius:80%;
 }
