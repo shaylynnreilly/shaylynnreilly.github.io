@@ -127,9 +127,11 @@ body {
 
 .main ul {
 	-webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-	font-size:15
+    	-moz-column-count: 3; /* Firefox */
+    	column-count: 3;
+	font-size:15;
+	margin-bottom: 50px;
+	padding-left:100px;
 }
 
 
