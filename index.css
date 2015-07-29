@@ -118,3 +118,7 @@ img {
   	width: auto;
   	border-radius:80%;
 }
+
+.main p {
+	padding-top: 110px;
+}
