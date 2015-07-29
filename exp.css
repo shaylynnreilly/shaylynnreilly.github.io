@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-	font-family: Century Gothic;
+	font-family: 'Droid Sans', sans-serif;
 	font-weight: 100;
 }
 
@@ -17,15 +17,16 @@ body {
 
 /* Header */
 .header {
-  height: 300px;
-  text-align: center; 
-  background: url("lights.jpg") no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  	height: 300px;
+  	text-align: center; 
+	background: url("lights.jpg") no-repeat center;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 	text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
 	margin-right: -35px;
+	font-family: 'Muli', sans-serif;
 }
 
 .header .container {
