@@ -113,8 +113,20 @@ body {
 /* Main */
 .main .container {
 	margin-top: 80px;
-	text-align: center;
+	text-align: left;
 	font-size: 24px;
+}
+
+.main p {
+	text-align: center;
+	text-decoration: underline;
+}
+
+.main ul {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+	font-size:15
 }
 
 img {
@@ -126,7 +138,6 @@ img {
 #here {
 	background: #fff;
 	color: black;
-	padding-top:32px;
+	padding-top:31px;
 	padding-bottom:32px;
-	margin-right: -5px
 }
