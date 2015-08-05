@@ -17,9 +17,10 @@ body {
 
 /* Header */
 .header {
-  	height: 600px;
+  	height: 240px;
   	text-align: center; 
-  	background: url("http://www.wall321.com/thumbnails/detail/20120403/light%20abstract%201920x1200%20wallpaper_www.wallpaperto.com_12.jpg") no-repeat center;
+    background-color: aliceblue;
+  	//background: url() no-repeat center;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -29,96 +30,64 @@ body {
 
 .header .container {
 	position: relative;
-	top: 200px;
+	top: 50px;
 }
 
 .header h1 {
-	font-size: 80px;
+	font-size: 60px;
 	line-height: 100px; 
 	margin-top: 0;
-	margin-bottom: 80px;
+	margin-bottom: 5px;
   	color: white;
 	font-family: 'Muli', sans-serif;
 }
 
-@media (min-width:850px) {
-	.header h1 {
-		font-size: 120px;
-	}
-}
-
-.header p {
-	font-weight: 500;
-	letter-spacing: 8px;
-	margin-bottom: 40px;
-	margin-top: 0;
+.header h3 {
+  margin-bottom: 10px;
   color: white;
-	font-size: 20px;
+  font-family: 'Muli', sans-serif;
 }
 
-
-.btn {
-  	background-color:black;
-  	color: white;
-  	text-decoration:none;
-  	padding: 10px;
-  	width: 200px;
-  	margin-left: auto;
-  	margin-right: auto;
-}
-
-.btn a {
-  	color: white;
-  	text-decoration:none;
-}
-  
-
-.btn:hover {
-	background: #fff;
-	cursor: pointer; 
-	transition: background .5s;  
-	padding-top:30px;
-	padding-bottom:30px;
-	opacity: 80%;
-	color:black;
-}
-
-
-/* Nav */
-.nav {
-  	background-color: black;
-  	width: auto;
-}
-
-.nav ul {
-	list-style: none;
-	margin: 0 auto; 
-	padding: 30px 0;
-	text-align: center; 
-  
-}
-
-.nav li {
-  	display: inline;
-  	padding-top:30px;
-  	padding-bottom:30px;
-}
-
-
-/* Main */
 .main .container {
-	margin: 80px auto;
+  margin-top: 90px;
+  margin-bottom: 200px;
+}
+
+input {
+    border: 0px;
+    padding: 5px;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    margin-top: 4px;
 }
 
 img {
-  	float: left;
-  	padding-bottom: 30px;
-  	padding-right: 30px;
-  	height:250px;
-  	width: auto;
-  	border-radius:80%;
+  height: 100px;
+  width: auto;
 }
 
-.main p {
-	padding-top: 110px;
+p {
+  margin-top: 75px;
+  margin-bottom: 30px;
+}
+
+#hrs, #mins {
+  width: 25px;
+}
+
+#submit {
+  float: right;
+  font-size: 40px;
+  position: relative;
+  top: -90px;
+}
+
+#submit:hover {
+  background-color: aliceblue;
+}
+
+.footer {
+  background-color: aliceblue;
+  float: bottom;
+  height: 80px;
 }
