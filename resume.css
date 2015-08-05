@@ -154,5 +154,8 @@ img {
 	.header h5 {
 		font-size: 40px;
 	}	
+	.nav li {
+		margin-bottom: 30px;
+	}
 
 }
