@@ -184,6 +184,7 @@ img {
 		font-size: 40px;
 		display: list-item;
 		list-style-type: circle;
-		margin-left: 7px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 }
