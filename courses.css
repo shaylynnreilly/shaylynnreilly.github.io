@@ -183,8 +183,6 @@ img {
 	}
 	.main li {
 		font-size: 40px;
-		display: list-item;
-		list-style-type: circle;
 		margin-left: 25px;
 		margin-right: 25px;
 	}
