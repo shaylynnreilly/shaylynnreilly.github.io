@@ -158,8 +158,10 @@ img {
 	.nav li {
 		padding-top: 50px;
 		padding-bottom:50px;
-		positoin: relative;
-		z-index: -1;
+	}
+	#download {
+		position: relative;
+		top: 10px;
 	}
 
 }
