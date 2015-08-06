@@ -173,6 +173,9 @@ img {
 	}
 	#download {
 		position: relative;
-		top: 50px;
+		top: 55px;
+	}
+	.main {
+		font-size: 50px;
 	}
 }
