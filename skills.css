@@ -135,7 +135,7 @@ body {
 }
 
 
-#here {
+#here, #skills {
 	background: #fff;
 	color: black;
 	padding-top:30px;
@@ -182,7 +182,7 @@ body {
 	}
 	.main li {
 		font-size: 40px;
-		margin-left: 10px;
+		margin-left: 20px;
 		margin-right: 55px;
 	}
 }
