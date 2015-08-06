@@ -168,10 +168,6 @@ body {
 	.header h5 {
 		font-size: 50px;
 	}	
-	.nav li {
-		padding-top: 50px;
-		padding-bottom:50px;
-	}
 	#download, #skills {
 		position: relative;
 		top: 55px;
@@ -182,7 +178,6 @@ body {
 	}
 	.main li {
 		font-size: 40px;
-		margin-left: 30px;
-		margin-right: 55px;
+		margin-left: 32px;
 	}
 }
