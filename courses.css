@@ -179,12 +179,13 @@ img {
 	}
 	.main {
 		font-size: 50px;
+		margin-bottom: 20px;
 	}
 	.main li {
 		font-size: 40px;
 		display: list-item;
 		list-style-type: circle;
-		margin-left: 12px;
-		margin-right: 12px;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 }
