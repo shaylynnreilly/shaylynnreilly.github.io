@@ -162,10 +162,10 @@ img {
 		height: 200px;
 	}
 	.header h2 {
-		font-size: 120px;
+		font-size: 200px;
 	}
 	.header h5 {
-		font-size: 40px;
+		font-size: 50px;
 	}	
 	.nav li {
 		padding-top: 50px;
@@ -179,6 +179,6 @@ img {
 		font-size: 50px;
 	}
 	.main li {
-		font-size: 50px;
+		font-size: 40px;
 	}
 }
