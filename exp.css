@@ -152,14 +152,13 @@ body {
 	.header p {
 		font-size: 40px;
 	}
-	img {
-		height: 200px;
-	}
 	.header h2 {
-		font-size: 120px;
+		font-size: 200px;
+		font-family: sans-serif;
+		line-height: 160px; 
 	}
 	.header h5 {
-		font-size: 40px;
+		font-size: 50px;
 	}	
 	.nav li {
 		padding-top: 50px;
@@ -167,6 +166,15 @@ body {
 	}
 	#download {
 		position: relative;
-		top: 50px;
+		top: 55px;
+	}
+	.main {
+		font-size: 50px;
+		margin-bottom: 20px;
+	}
+	.main li {
+		font-size: 40px;
+		display: list-item;
+		list-style-type: circle;
 	}
 }
