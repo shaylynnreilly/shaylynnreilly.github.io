@@ -1,139 +1,63 @@
-html, body {
-	margin: 0;
-	padding: 0;
+  body {
+      font: 16px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #2f2f2f;
+  }
+
+  a {
+    color: #2f2f2f;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #9988ff;
+    text-decoration: none;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+
+  .jumbotron {
+    background-color: #2f2f2f;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 6px;
+    font: Open-Sans;
+  }
+  .container {
+      padding-bottom: 70px;
+  }
+  .nav {
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 16px;
+      letter-spacing: 5px;
+  }
+
+.list-group {
+  color: #2f2f2f;
 }
 
-body {
-	font-family: 'Droid Sans', sans-serif;
-	font-weight: 100;
+a[aria-expanded="true"] {
+  text-decoration: none;
+  color: #9988ff;
+}
+a[aria-expanded="false"] {
+  text-decoration: none;
 }
 
-.container {
-	margin: 0 auto;
-	max-width: 940px; 
-	padding: 0 10px; 
+.open .dropdown-toggle {
+    color: #9988ff;
+    border-style: none;
 }
 
-
-/* Header */
-.header {
-  	height: 600px;
-  	text-align: center; 
-  	background: url("http://www.wall321.com/thumbnails/detail/20120403/light%20abstract%201920x1200%20wallpaper_www.wallpaperto.com_12.jpg") no-repeat center;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-	text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
-}
-
-.header .container {
-	position: relative;
-	top: 200px;
-}
-
-.header h1 {
-	font-size: 80px;
-	line-height: 100px; 
-	margin-top: 0;
-	margin-bottom: 80px;
-  	color: white;
-	font-family: 'Muli', sans-serif;
-}
-
-@media (min-width:850px) {
-	.header h1 {
-		font-size: 120px;
-	}
-}
-
-.header p {
-	font-weight: 500;
-	letter-spacing: 8px;
-	margin-bottom: 40px;
-	margin-top: 0;
-  	color: white;
-	font-size: 20px;
-}
-
-
-.btn {
-  	background-color:black;
-  	color: white;
-  	text-decoration:none;
-  	padding: 10px;
-  	width: 200px;
-  	margin-left: auto;
-  	margin-right: auto;
-}
-
-.btn a {
-  	color: white;
-  	text-decoration:none;
-}
-  
-
-.btn:hover {
-	background: #fff;
-	cursor: pointer; 
-	transition: background .5s;  
-	padding-top:30px;
-	padding-bottom:30px;
-	opacity: 80%;
-	color:black;
-}
-
-
-/* Nav */
-.nav {
-  	background-color: black;
-  	width: auto;
-}
-
-.nav ul {
-	list-style: none;
-	margin: 0 auto; 
-	padding: 30px 0;
-	text-align: center; 
-  
-}
-
-.nav li {
-  	display: inline;
-  	padding-top:30px;
-  	padding-bottom:30px;
-}
-
-
-/* Main */
-.main .container {
-	margin: 80px auto;
-}
-
-img {
-  	float: left;
-  	padding-bottom: 30px;
-  	padding-right: 30px;
-  	height:250px;
-  	width: auto;
-  	border-radius:80%;
-}
-
-.main p {
-	padding-top: 110px;
-}
-
-@media screen and (min-device-width: 320px) and (max-device-width: 667px) {
-	.nav {
-		font-size: 42px;
-	}
-	p {
-		font-size: 50px;
-	}
-	.header p {
-		font-size: 40px;
-	}
-	img {
-		height: 500px;
-	}
+.dropdown-menu li a:hover {
+    color: #9988ff;
+    background-color: none;
 }
