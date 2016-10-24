@@ -1,4 +1,4 @@
-  body {
+ body {
       font: 16px Montserrat, sans-serif;
       line-height: 1.8;
       color: #2f2f2f;
@@ -11,10 +11,6 @@
 
   a:hover {
     color: #9988ff;
-    text-decoration: none;
-  }
-
-  a:visited {
     text-decoration: none;
   }
 
@@ -50,6 +46,7 @@ a[aria-expanded="true"] {
 }
 a[aria-expanded="false"] {
   text-decoration: none;
+  color: #2f2f2f;
 }
 
 .open .dropdown-toggle {
