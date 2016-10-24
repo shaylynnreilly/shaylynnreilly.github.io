@@ -17,12 +17,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Shaylynn Reilly</title>
 		<script>
+		function toggle_arrow(span_name, a_name) {
+			if ($(a_name).attr("aria-expanded") == 'false' || !$(a_name).attr("aria-expanded")) {
+				$(span_name).attr("class", "glyphicon glyphicon-menu-down");
+			}
+			else {
+				$(span_name).attr("class", "glyphicon glyphicon-menu-right");
+			}
+		};
 		function renderResume() {
 			html = "<br/>hi";
-			html = "<div class=\"panel-group\"><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" href=\"#collapse-ed\"><span class=\"glyphicon glyphicon-menu-right\"></span> Education</a></h4></div><div id=\"collapse-ed\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\">Tufts University, Medford MA</li><li class=\"list-group-item\">Computer Science, May 2016</li><li class=\"list-group-item\">GPA: 3.17</li></ul><div class=\"panel-footer\"></div></div>";
-			html += "<div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" href=\"#collapse-courses\"><span class=\"glyphicon glyphicon-menu-right\"></span> Relevant Courses</a></h4></div><div id=\"collapse-courses\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\">Calculus II</li><li class=\"list-group-item\">Discrete Mathematics</li><li class=\"list-group-item\">Data Structures</li><li class=\"list-group-item\">Web Programming</li><li class=\"list-group-item\">Machine Structure & Programming</li><li class=\"list-group-item\">Artificial Intellegence</li><li class=\"list-group-item\">Algorithms</li><li class=\"list-group-item\">Networks</li><li class=\"list-group-item\">Programming Languages</li><li class=\"list-group-item\">Computation Theory</li></ul><div class=\"panel-footer\"></div></div>";
-			html += "<div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" href=\"#collapse-skills\"><span class=\"glyphicon glyphicon-menu-right\"></span> Skills</a></h4></div><div id=\"collapse-skills\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\"><b>Programming languages:</b> C++, C, Python, JavaScript, HTML, CSS, PHP, SQL</li><li class=\"list-group-item\"><b>Software:</b>  Linux OS, Asterisk, Icecast/IceS, MySQL, Microsoft Office</li><li class=\"list-group-item\"><b>Certifications:</b> AHA CPR Certified, MA EMT-Basic Certified</li></ul><div class=\"panel-footer\"></div></div>";
-			html += "<div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" href=\"#collapse-work\"><span class=\"glyphicon glyphicon-menu-right\"></span> Work Experience</a></h4></div><div id=\"collapse-work\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\"><b>Plum Voice</b>, Junior System Engineer</li><li class=\"list-group-item\"><b>Mobile Heartbeat</b>, QA Intern</li><li class=\"list-group-item\"><b>Tufts University</b>, Emergency Care Teaching Assistant</li><li class=\"list-group-item\"><b>Tufts University</b>, Tufts University EMS</li><li class=\"list-group-item\"><b>Plum Voice</b>, Technical Intern</li><li class=\"list-group-item\"><b>Westchester County</b>, Westchester County Parks EMS</li></ul><div class=\"panel-footer\"></div></div>";
+			html = "<div id=\"collapse-example\" class=\"panel-group\"><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 class=\"panel-title\"><a id=\"ed-a\" data-toggle=\"collapse\" href=\"#collapse-ed\" onclick=\"toggle_arrow('#ed-arrow', '#ed-a')\"><span id=\"ed-arrow\" class=\"glyphicon glyphicon-menu-right\"></span> Education</a></h4></div><div id=\"collapse-ed\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\">Tufts University, Medford MA</li><li class=\"list-group-item\">Computer Science, May 2016</li><li class=\"list-group-item\">GPA: 3.17</li></ul><div class=\"panel-footer\"></div></div>";
+			html += "<div class=\"panel-heading\"><h4 class=\"panel-title\"><a id=\"courses-a\" data-toggle=\"collapse\" href=\"#collapse-courses\" onclick=\"toggle_arrow('#courses-arrow', '#courses-a')\"><span id=\"courses-arrow\"class=\"glyphicon glyphicon-menu-right\"></span> Relevant Courses</a></h4></div><div id=\"collapse-courses\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\">Calculus II</li><li class=\"list-group-item\">Discrete Mathematics</li><li class=\"list-group-item\">Data Structures</li><li class=\"list-group-item\">Web Programming</li><li class=\"list-group-item\">Machine Structure & Programming</li><li class=\"list-group-item\">Artificial Intellegence</li><li class=\"list-group-item\">Algorithms</li><li class=\"list-group-item\">Networks</li><li class=\"list-group-item\">Programming Languages</li><li class=\"list-group-item\">Computation Theory</li></ul><div class=\"panel-footer\"></div></div>";
+			html += "<div class=\"panel-heading\"><h4 class=\"panel-title\"><a id=\"skills-a\" data-toggle=\"collapse\" href=\"#collapse-skills\" onclick=\"toggle_arrow('#skills-arrow', '#skills-a')\"><span id=\"skills-arrow\" class=\"glyphicon glyphicon-menu-right\"></span> Skills</a></h4></div><div id=\"collapse-skills\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\"><b>Programming languages:</b> C++, C, Python, JavaScript, HTML, CSS, PHP, SQL</li><li class=\"list-group-item\"><b>Software:</b>  Linux OS, Asterisk, Icecast/IceS, MySQL, Microsoft Office</li><li class=\"list-group-item\"><b>Certifications:</b> AHA CPR Certified, MA EMT-Basic Certified</li></ul><div class=\"panel-footer\"></div></div>";
+			html += "<div class=\"panel-heading\"><h4 class=\"panel-title\"><a id=\"work-a\" data-toggle=\"collapse\" href=\"#collapse-work\" onclick=\"toggle_arrow('#work-arrow', '#work-a')\"><span id=\"work-arrow\" class=\"glyphicon glyphicon-menu-right\"></span> Work Experience</a></h4></div><div id=\"collapse-work\" class=\"panel-collapse collapse\"><ul class=\"list-group\"><li class=\"list-group-item\"><b>Plum Voice</b>, Junior System Engineer</li><li class=\"list-group-item\"><b>Mobile Heartbeat</b>, QA Intern</li><li class=\"list-group-item\"><b>Tufts University</b>, Emergency Care Teaching Assistant</li><li class=\"list-group-item\"><b>Tufts University</b>, Tufts University EMS</li><li class=\"list-group-item\"><b>Plum Voice</b>, Technical Intern</li><li class=\"list-group-item\"><b>Westchester County</b>, Westchester County Parks EMS</li></ul><div class=\"panel-footer\"></div></div>";
 			html += "</div></div>";
 			$("#content-html").html(html);
 		};
@@ -70,6 +78,9 @@
 			$('#home').attr("class", "active");
 			$('#resume-dropdown').attr("class", "dropdown");
 			renderHomepage();
+		});
+		$('#collapse-example').click(function() {
+			console.log("here");
 		});
 		</script>
 </html>
